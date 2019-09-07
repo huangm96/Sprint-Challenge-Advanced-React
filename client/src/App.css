@@ -5,3 +5,23 @@
   display:flex;
   justify-content: center;
 }
+.dark-mode{
+  background:black;
+  color:white;
+}
+.navbar{
+  margin: 10px 100px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle{
+  width: 60px;
+  height:20px;
+  border: 1px solid black
+}
+.toggle.toggled{
+  width: 60px;
+  height:20px;
+  border: 1px solid white
+}
