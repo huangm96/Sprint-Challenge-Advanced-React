@@ -5,15 +5,20 @@ import PlayersList from './components/PlayersList'
 
 class App extends React.Component {
   state = {
-    players: [{}]
+    players: []
   };
+  
   componentDidMount() {
    axios
      .get("http://localhost:5000/api/players")
 
      .then(response => {
-       console.log(response);
-       this.setState({players: [response.data]});
+       
+       response.data.forEach((data) => {
+         this.setState({ players: [...this.state.players, data] });
+       })
+       
+    
      })
 
      .catch(function(error) {
@@ -21,6 +26,7 @@ class App extends React.Component {
      });
   }
   render() {
+   
     return (
       <div className="App">
         <h1>Players</h1>
